@@ -37,11 +37,13 @@ function reg(){
     if(user.acc!='' && user.pw!='' && user.pw2!='' && user.email!=''){
         if(user.pw==user.pw2){
             $.post("./api/chk_acc.php",{acc:user.acc},(res)=>{
-                console.log(res)
+                //console.log(res)
                 if(parseInt(res)==1){
                     alert("帳號重覆")
                 }else{
-
+                    $.post('./api/reg.php',user,(res)=>{
+                        alert('註冊完成，歡迎加入')
+                    })
                 }
             })
         }else{
