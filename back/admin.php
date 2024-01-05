@@ -10,6 +10,7 @@
     <?php
     $rows=$User->all();
     foreach($rows as $row){
+        if($row['acc']!='admin'){
     ?>
         <tr>
             <td><?=$row['acc'];?></td>
@@ -19,6 +20,7 @@
             </td>
         </tr>
     <?php
+        }
     }
     ?>        
     </table>
