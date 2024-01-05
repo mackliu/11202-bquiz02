@@ -1,6 +1,6 @@
 <fieldset>
     <legend>帳號管理</legend>
-    <form action="./edit_user.php" method="post">
+    <form action="./api/edit_user.php" method="post">
     <table style="width:55%;margin:auto;text-align:center">
         <tr>
             <td class='clo'>帳號</td>
