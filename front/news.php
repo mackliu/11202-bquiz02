@@ -17,8 +17,11 @@
         foreach($rows as $row){
         ?>
         <tr>
-            <td><?=$row['title'];?></td>
-            <td><?=mb_substr($row['news'],0,25);?>...</td>
+            <td><div class='title' data-id="<?=$row['id'];?>" style='cursor: pointer'><?=$row['title'];?></div></td>
+            <td>
+                <div id="s<?=$row['id'];?>"><?=mb_substr($row['news'],0,25);?>...</div>
+                <div id="a<?=$row['id'];?>" style='display:none'><?=$row['news'];?></div>
+            </td>
             <td></td>
         </tr>
         <?php
@@ -42,3 +45,13 @@
     ?>
     </div>
 </fieldset>
+<script>
+$(".title").on('click',(e)=>{
+    let id=$(e.target).data('id');
+    $(`#s${id},#a${id}`).toggle();
+    //$("#s"+id+",#a"+id).toggle();
+
+})
+
+
+</script>
