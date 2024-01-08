@@ -75,9 +75,5 @@ $(".title").hover(
         $("#p"+id).show();
     }
 )
-function good(news){
-$.post("./api/good.php",{news},()=>{
-    location.reload();
-})
-}
+
 </script>
