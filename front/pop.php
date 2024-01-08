@@ -17,15 +17,23 @@
         foreach($rows as $row){
         ?>
         <tr>
-            <td><div class='title' data-id="<?=$row['id'];?>"><?=$row['title'];?></div></td>
+            <td>
+                <div class='title' data-id="<?=$row['id'];?>">
+                    <?=$row['title'];?>
+                </div>
+            </td>
             <td style="position: relative;">
-                <div><?=mb_substr($row['news'],0,25);?>...</div>
+                <div>
+                    <?=mb_substr($row['news'],0,25);?>...
+                </div>
                 <div id="p<?=$row['id'];?>" class="pop">
                     <h3 style='color:skyblue'><?=$row['title'];?></h3>
 		            <pre><?=$row['news'];?></pre>
 	            </div>
             </td>
-            <td></td>
+            <td>
+                <span id="g<?=$row['id'];?>"><?=$row['good'];?></span>個人說<img src="./icon/02B03.jpg" style="width:25px">
+            </td>
         </tr>
         <?php
         }
