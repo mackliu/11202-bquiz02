@@ -7,6 +7,7 @@
         border-radius: 5px 5px 0 0;
         text-align: center;
         background-color: #ccc;
+        cursor: pointer;
     }
     .tags{
         display: flex;

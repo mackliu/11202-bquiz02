@@ -39,13 +39,15 @@ getList(1)
 function getList(type){
     $.get("./api/get_list.php",{type},(list)=>{
         $(".list-items").html(list)
-        $(".article,.list-items").toggle();
+        $(".article").hide();
+        $(".list-items").show();
     })
 }
 function getNews(id){
     $.get("./api/get_news.php",{id},(news)=>{
         $(".article").html(news)
-        $(".article,.list-items").toggle();
+        $(".article").show();
+        $(".list-items").hide();
     })
 }
 </script>
