@@ -21,6 +21,7 @@
             <td style="position: relative;">
                 <div><?=mb_substr($row['news'],0,25);?>...</div>
                 <div id="p<?=$row['id'];?>" class="pop">
+                    <h3 style='color:skyblue'><?=$row['title'];?></h3>
 		            <pre><?=$row['news'];?></pre>
 	            </div>
             </td>
