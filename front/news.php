@@ -34,9 +34,9 @@
             <?php
             if(isset($_SESSION['user'])){
                 if($Log->count(['news'=>$row['id'],'acc'=>$_SESSION['user']])>0){
-                    echo "<a href='Javascript:good({$row['id']})'>收回讚</a>";
+                    echo "<a id='n{$row['id']}' href='Javascript:good({$row['id']})'>收回讚</a>";
                 }else{
-                    echo "<a href='Javascript:good({$row['id']})'>讚</a>";
+                    echo "<a id='n{$row['id']}' href='Javascript:good({$row['id']})'>讚</a>";
                 }
             }
             ?>
