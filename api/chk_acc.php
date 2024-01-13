@@ -8,3 +8,5 @@ if($res>0){
     echo 0;
 }
 
+//簡化
+//echo $User->count(['acc'=>$_POST['acc']]);
