@@ -68,10 +68,15 @@
     </div>    
 </fieldset>
 <script>
+//點擊事件改為hover
 $(".title").hover(
     function(){
+        //先將所有的pop隱藏起來
         $(".pop").hide()
+        //取得點擊的id
         let id=$(this).data("id")
+        
+        //將對應的pop顯示出來
         $("#p"+id).show();
     }
 )

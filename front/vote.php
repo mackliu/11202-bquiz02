@@ -1,5 +1,5 @@
 <?php
-
+//根據網址參數id取得主題資料
 $que=$Que->find($_GET['id']);
 
 ?>
@@ -9,7 +9,7 @@ $que=$Que->find($_GET['id']);
 
 <form action="./api/vote.php" method="post">
 <?php 
-
+//根據主題的id取得所有的選項
 $opts=$Que->all(['subject_id'=>$_GET['id']]);
 foreach($opts as $opt){
     echo "<div>";

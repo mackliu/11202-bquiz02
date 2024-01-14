@@ -64,11 +64,13 @@
     </div>
 </fieldset>
 <script>
+//對class title進行點擊事件註冊    
 $(".title").on('click',(e)=>{
+    //取得點擊的id
     let id=$(e.target).data('id');
+    
+    //對id為s+id,a+id的元素進行toggle來切顯示與隱藏
     $(`#s${id},#a${id}`).toggle();
-    //$("#s"+id+",#a"+id).toggle();
-
 })
 
 </script>
