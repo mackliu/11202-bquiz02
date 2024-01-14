@@ -1,4 +1,14 @@
 <style>
+    /**使用flex屬性來讓容器中的box元件併成一個橫列 */
+    .tags{
+        display: flex;
+        margin-left:1px;
+    }
+
+    /**
+     * 設定每個標籤的外型和排列
+     * 利用margin:-1px讓標籤和檢籤的邊線合成一條
+     ***/
     .tag{
         width:100px;
         padding:5px 10px;
@@ -9,11 +19,10 @@
         background-color: #ccc;
         cursor: pointer;
     }
-    .tags{
-        display: flex;
-        margin-left:1px;
-    }
 
+    /**
+     * 設定文章區塊的外型
+     ***/
     article section{
         border:1px solid black;
         border-radius: 0 5px 5px 5px;
@@ -22,6 +31,10 @@
         display: none;
         padding:15px;
     }
+
+    /** 
+     * 設定啟用中的標籤的css樣式
+     ***/
     .active{
         border-bottom:1px solid white;
         background-color: white;
@@ -36,7 +49,9 @@
 </div>
 
 <article>
-    <section id="section01" style="display:block"><h2>健康新知</h2>
+    <section id="section01" style="display:block">
+    <h2>健康新知</h2>
+<!--加上標籤pre可以讓文章內容維持原本格式-->       
 <pre>    
     缺乏運動已成為影響全球死亡率的第四大危險因子-國人無規律運動之比率高達72.2%
 資料來源： 行政院衛生署國民健康局 
@@ -57,7 +72,8 @@
     民眾對運動如有疑問，可參考國民健康局肥胖防治網-「快樂動」(http://obesity.bhp.gov.tw)，亦可撥打免費市話健康體重管理電話諮詢服務，諮詢專線「0800-367-100（0800-瘦落去-要動動）」，也可利用國民健康局局網首頁或肥胖防治網問題諮詢專區的網路電話撥入功能，向客服人員諮詢關於運動、健康飲食及健康體重管理等相關疑問。
 </pre>
 </section>
-    <section id="section02"><h2>菸害防治</h2>
+    <section id="section02">
+        <h2>菸害防治</h2>
 <pre>
 菸害防治法規
 第二十三條　　違反第五條或第十條第一項規定者，處新臺幣一萬元以上五萬元以下罰鍰，並得按次連續處罰。
@@ -82,7 +98,8 @@
 
 </pre>    
 </section>
-    <section id="section03"><h2>癌症防治</h2>
+    <section id="section03">
+        <h2>癌症防治</h2>
 <pre>
 降低罹癌風險 建構健康生活型態
 癌症防治   三管齊下  Part 1 降低罹癌風險建構健康生活型態 
@@ -103,7 +120,8 @@
 
 </pre>    
 </section>
-    <section id="section04"><h2>慢性病防治</h2>
+    <section id="section04">
+        <h2>慢性病防治</h2>
 <pre>
 長期憋尿 泌尿系統問題多 
 資料來源：中央健康保險局雙月刊第98期
@@ -132,11 +150,22 @@
 </article>
 
 <script>
+    //建立頁籤的點擊事件
    $(".tag").on('click',function(){
+
+        //先移除全部頁籤的active class
         $(".tag").removeClass('active')
+
+        //在點擊當下的頁籤加上active
         $(this).addClass('active')
+
+        //透過字串取代的方式取得對應的section id
         let id=$(this).attr('id').replace("sec",'section');
+
+        //先隱藏全部的文章
         $("section").hide();
+
+        //再顯示對應的文章
         $("#"+id).show();
    })
 </script>
